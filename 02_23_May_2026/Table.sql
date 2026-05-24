@@ -192,5 +192,82 @@ Table :
 				Employee_DOB date
 			)
 
+		-- Existing table modification:
+			When we have existing table and if we want to modify the columns.
+				like adding a new one, rename existing column or remove column.
+			We can perform this operation without affecting any data.
+
+			-- Add new column :
+				Add a new column into existing table.
+
+				-- Syntax :
+					Alter table tbl_name
+					Add column_name datatype
+
+				-- Example :
+					Alter table tbl_Employee
+					Add Employee_Email varchar(20)
+
+			-- Modify column :
+				With this i can modify the datatype and change the property of the
+					column.
+				I can not rename the column name using this syntax.
+
+				-- Syntax :
+					Alter table tbl_name
+					Alter column column_name datatype
+
+				-- Example :
+					Alter table tbl_Employee
+					Alter column Employee_Email nvarchar(15)
+
+			-- Delete column :
+				Delete existing column without affecting other data.
+				Once we delete a column we can not recover that column back.
+
+				-- Syntax :
+					Alter table tbl_name
+					Drop column column_name
+
+				-- Example :
+					Alter table tbl_Employee
+					Drop column Employee_DOB
+
+		-- Rename table :
+			Rename table name without affecting data.
+			Once we rename the table we need to modify the references as well 
+				otherwise it will throw error.
+
+			-- Syntax :
+				Exec sp_rename 'old_tablename','new_tablename'
+
+			-- Example :
+				exec sp_rename '[dbo].[tbl_Employee]','tbl_EmployeeMaster'
+
+		-- Rename column column name :
+			Rename column name without affecting data.
+			Once we rename the table we need to modify the references as well 
+				otherwise it will throw error.
+
+			-- Syntax :
+				exec sp_rename 'tbl_name.column_name','new_column_name','column'
+
+			-- Example :
+				Exec sp_rename '[dbo].[tbl_EmployeeMaster].[Employee_Email]',
+					'Employee_EmailId','column'
+
+	-- Delete table :
+		Remove existing table from DB.
+		Once we delete a table we do not have option to recover it back.
+		And by deleting a table we also delete a data of that table.
+
+		-- Syntax :
+			Drop table tbl_name
+
+		-- Example :
+			Drop table tbl_Employee_1
+
+
+
 			
 		
