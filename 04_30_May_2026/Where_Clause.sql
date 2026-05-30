@@ -27,3 +27,13 @@
 		-- With delete statement
 		Delete from tbl_Employee Where Employee_Id = 3
 
+		Delete from tbl_Employee Where Employee_Name = 'harsh'
+
+		Update tbl_Employee Set
+			Employee_DOB = '2026-05-01'
+		Where Employee_Id = 1
+
+		Update tbl_Employee Set
+			Employee_DOB = '2026-05-30'
+		Where Employee_Id = 4
+

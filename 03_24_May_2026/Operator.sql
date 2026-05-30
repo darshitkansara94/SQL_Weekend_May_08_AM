@@ -80,4 +80,98 @@ Operator :
 					Less than or equal to, If left side value is less or equal to then
 						it will return as true other wise return false.
 
-		-- Logical Operator
+		-- Logical Operator :
+			Logical operator is use when we need to filter data more accurately.
+
+			-- Types Of Operators :
+				And :
+					Return output if all conditions are true. If any condition is false then we will not
+						get any output.
+
+					-- Syntax :
+						Select * from tbl_name
+						Where column_name = expression And column_name = expression And column_name = expression
+
+					-- Example :
+						Select * from tbl_Employee
+						Where Employee_Id = 4 And Employee_name = 'Ajay'
+
+						Select * from tbl_Employee
+						Where Employee_Id = 4 And Employee_name = 'Dev'
+
+				Or :
+					If any condition is true we will get output for that condition.
+
+					-- Syntax :
+						Select * from tbl_name
+						Where column_name = exprssion OR column_name = expression
+
+					-- Example :
+						Select * from tbl_Employee
+						Where Employee_Id = 4 Or Employee_name = 'Ajay'
+
+						Select * from tbl_Employee
+						Where Employee_Id = 4 OR Employee_name = 'Pratik'
+
+				In :
+					In operator use to filter multiple record from single column.
+
+					-- Syntax :
+						Select * from tbl_name where column_name in (expression1,expressin2,..,expressionN)
+
+					-- Example :
+						Select * from tbl_Employee Where Employee_ID in (1,4,3)
+
+						Select * from tbl_Employee Where Employee_ID in (1,4,3,10)
+
+						Select * from tbl_Employee
+						Where Employee_Name in ('Dev','Ajay')
+
+				Like :
+					Like operator filter out vaue based on start with, end with and contains searching
+						criteria.
+					We will use this criteria by applying '%' sign.
+
+					-- Syntax :
+						-- Start with
+						Select * from tbl_name
+						Where column_name like 'exprssion%'
+
+						-- End with
+						Select * from tbl_name
+						Where column_name like '%expression'
+
+						-- Contains :
+						Select * from tbl_name
+						Where column_name like '%expression%'
+
+					-- Example :
+						Select * from tbl_Employee
+
+						-- Start with
+						Select * from tbl_Employee
+						Where Employee_name like 'D%'
+
+						Select * from tbl_Employee
+						Where Employee_name like 'Da%'
+
+						Select * from tbl_Employee
+						Where Employee_name like 'De%'
+
+						-- End with
+						Select * from tbl_Employee
+						Where Employee_Name like '%v'
+
+						-- Contains :
+						Select * from tbl_Employee
+						Where Employee_Name like '%ar%'
+
+						Update tbl_Employee Set
+							Employee_Age = 27
+						Where Employee_Name like 'Hars%'
+
+				Null
+				Is Null
+				Not
+				Between
+				Exists
