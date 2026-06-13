@@ -409,4 +409,6 @@ System Defined Function :
 					-- Example :
 						-- Assignement
 
+Select concat(day(getdate()),'-',month(getdate()))
+
 	
