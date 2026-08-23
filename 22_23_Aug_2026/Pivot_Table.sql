@@ -23,7 +23,7 @@ Pivot Table :
 		Add Product_Year int
 
 		Insert into tbl_ProductSource(Product_Name,Product_price)
-		values('Headphone',4000)
+		values('TV',9000)
 
 		Update tbl_ProductSource set
 			Product_Year = 2010
